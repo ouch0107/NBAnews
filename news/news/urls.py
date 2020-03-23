@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.views import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('topnews.urls')),
+    path('favicon.ico', serve, {'path': 'img/basketball.ico'})
 ]
